@@ -3,11 +3,24 @@
 }
 
 body {
-  background-color: rgb(36, 36, 36);
+  background-color: rgb(35, 72, 98);
 }
 
 h1, h2, h3, h4, h5, h6, p, tr, td, a, label {
-  color: rgb(190, 190, 190);
+  color: rgb(255, 255, 255);
+}
+
+/* Flash Notifications */
+.notification {
+  font-size: 30px;
+  color: White;
+  background-color: rgb(109, 207, 158);
+  border: 1px solid rgb(12, 107, 20);
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  width: 100%;
+  display: block;
 }
 
 /* Navigation bar */
@@ -51,7 +64,7 @@ body, html {
 }
 
 #bg {
-  background-image: url("/images/cat.jpg");
+  background-image: url("/images/cat1.jpg");
   height: 100%; 
   background-position: center;
   background-repeat: no-repeat;
@@ -59,10 +72,69 @@ body, html {
 }
 
 /* Index page */
-#table-container {
+#title-kitten-index {
   text-align: center;
-  background-color: black;
+  font-size: 50px;
+}
+
+#container {
+  text-align: center;
+  background-color: rgb(22, 51, 75);
   border: 1px solid white;
-  width: 20%;
+  border-radius: 100px;
+  width: fit-content;
   margin: 0 auto;
+  padding: 50px;
+  font-size: 20px;
+}
+
+#green {
+  width: 100%;
+}
+
+#add-container {
+  background-color: rgb(46, 151, 46);
+  border-radius: 20px;
+  border: 1px solid rgb(6, 99, 18);
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 0.4fr 1.2fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+#add-container:hover {
+  background-color: rgb(50, 201, 50);
+  width: 100%;
+}
+
+#new-kitten-btn {
+  text-align: center;
+  font-size: 30px;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+#new-link {
+  text-decoration: none;
+}
+
+#plus {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+td, th {
+  font-size: 27px;
+}
+
+th {
+  padding-left: 10px;
+}
+
+.options {
+  padding-left: 20px;
 }

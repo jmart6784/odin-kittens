@@ -1,34 +1,57 @@
-<h1>Kittens</h1>
-
 <%= render "shared/flash" %>
 
-<div id="table-container">
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Cuteness</th>
-        <th>Softness</th>
-      </tr>
-    </thead>
+<h1 id="title-kitten-index">Kittens</h1>
 
-    <tbody>
-      <% @kittens.each do |kitten| %>
+<div id="container">
+
+  <a id="new-link" href=<%= new_kitten_path %>>
+    <div id="green">
+      <div id="add-container">
+
+          <div></div>
+
+          <img id="plus" src="images/add.png" height="42", width="42">
+
+          <p id="new-kitten-btn">New Kitten</p>
+
+          <div></div>
+
+      </div>
+    </div>
+  </a>
+
+  <div id="table-container">
+    <table>
+      <thead>
         <tr>
-          <td><%= kitten.name %></td>
-          <td><%= kitten.age %></td>
-          <td><%= kitten.cuteness %></td>
-          <td><%= kitten.softness %></td>
-          <td><%= link_to 'Show', kitten %></td>
-          <td><%= link_to 'Edit', edit_kitten_path(kitten) %></td>
-          <td><%= link_to 'Delete', kitten, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Cuteness</th>
+          <th>Softness</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+        <% @kittens.each do |kitten| %>
+          <tr>
+            <td><%= kitten.name %></td>
+            <td><%= kitten.age %></td>
+            <td><%= kitten.cuteness %></td>
+            <td><%= kitten.softness %></td>
+
+            <td><%= link_to kitten do %>
+              <img src="images/view.png" class="options" height="40" width="40">
+            <% end %></td>
+
+            <td><%= link_to edit_kitten_path(kitten) do %>
+              <img src="images/edit.png" class="options" height="40" width="40">
+            <% end %></td>
+            <td><%= link_to kitten, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <img src="images/delete.png" class="options" height="40" width="40">
+            <% end %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
-
-<br>
-
-<%= link_to 'New Kitten', new_kitten_path %>
