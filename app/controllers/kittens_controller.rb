@@ -1,4 +1,6 @@
 class KittensController < ApplicationController
+  before_action :set_kitten, only: [:show, :edit, :update, :destroy]
+
   def index
     @kittens = Kitten.all
   end
@@ -15,23 +17,44 @@ class KittensController < ApplicationController
     
   end
 
+  def update
+    if @kitten.update(kitten_params)
+      flash[:success] = "Sucessfully edited this kitten!"
+      redirect_to @kitten
+    else
+      flash.now[:danger] = "Can't update this kitten. There are errors in your form."
+      render "edit"
+    end
+  end
+
   def create
     @kitten = Kitten.new(kitten_params)
-
-    if @kitten.valid?
-      flash[:notice] = "Successfully created #{@kitten.name}"
-    else
-      flash[:errors] = @kitten.errors.full_messages.to_sentence
+    if @kitten.save
+      flash[:success] = "Successfully created a kitten!"
+      redirect_to @kitten
+      puts "**********************************"
+      puts "SUCESSFULLY CREATED"
+      puts "**********************************"
+    else 
+      flash.now[:danger] = "Can't create this kitten. There are some errors in your form."
+      render "new"
+      puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+      puts "ERRORS FOUND"
+      puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     end
-
-    # redirect_to @kitten
   end
 
   def destroy
-    
+    flash[:info] = "#{@kitten.name} has been deleted."
+    @kitten.destroy
+    redirect_to root_path
   end
 
   private
+
+  def set_kitten
+    @kitten = Kitten.find(params[:id])
+  end
 
   def kitten_params
     params.require(:kitten).permit(:name, :age, :cuteness, :softness)

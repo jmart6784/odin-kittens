@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6, p, tr, td, a, label {
   padding: 0px;
   background-color: black;
   display: grid;
-  grid-template-columns: 1fr 1fr 11fr;
+  grid-template-columns: 1fr 1fr 12fr;
 }
 
 #cat-logo {
@@ -56,4 +56,13 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* Index page */
+#table-container {
+  text-align: center;
+  background-color: black;
+  border: 1px solid white;
+  width: 20%;
+  /* margin: 0 auto; */
 }
