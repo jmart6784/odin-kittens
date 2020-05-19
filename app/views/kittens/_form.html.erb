@@ -1,41 +1,41 @@
-<div id="error-msg">
-  <% if @kitten.errors.any? %>
-    <div>
-      <ul>
-        <% @kitten.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-</div>
+<% if @kitten.errors.any? %>
+  <div id="error-msg">
+    <ul id="error-list">
+      <% @kitten.errors.full_messages.each do |msg| %>
+        <li class="msg"><span><%= msg %></span></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
-<div id="form-container">
-  <%= form_for @kitten do |form| %>
+<%= form_for @kitten do |form| %>
 
-    <div class="text-field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
+  <div id="form-container" class="form-divs">
 
-    <div class="num-field">
-      <%= form.label :age %>
-      <%= form.number_field :age %>
+    <div class="form-divs">
+      <%= form.label :name, class: "label" %><br>
+      <%= form.text_field :name, class: "input" %>
     </div>
 
-    <div class="num-field">
-      <%= form.label :cuteness, "Cuteness (Out of 10)" %>
-      <%= form.number_field :cuteness %>
+    <div class="form-divs">
+      <%= form.label :age, class: "label" %><br>
+      <%= form.number_field :age, class: "input" %>
     </div>
 
-    <div class="num-field">
-      <%= form.label :softness, "Softness (Out of 10)" %>
-      <%= form.number_field :softness %>
+    <div class="form-divs">
+      <%= form.label :cuteness, "Cuteness (Out of 10)", class: "label" %><br>
+      <%= form.number_field :cuteness, class: "input" %>
     </div>
 
-    <div id="submit-btn">
-      <%= form.submit "Create" %>
+    <div class="form-divs">
+      <%= form.label :softness, "Softness (Out of 10)", class: "label" %><br>
+      <%= form.number_field :softness, class: "input" %>
     </div>
 
-  <% end %>
-</div>
+  </div>
+
+  <div id="btn-container" class="form-divs">
+    <%= form.submit "Create", id: "new-btn" %>
+  </div>
+
+<% end %>

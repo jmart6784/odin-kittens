@@ -138,3 +138,83 @@ th {
 .options {
   padding-left: 20px;
 }
+
+/* New Kitten page */
+
+.msg {
+  color: white;
+}
+
+#new-title {
+  text-align: center;
+  font-size: 50px;
+  padding: 25px;
+  margin: 0px;
+  border: 0px;
+}
+
+#form-container {
+  text-align: center;
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border: 4px solid rgb(255, 255, 255);
+  margin: 0 auto;
+  height: fit-content;
+  border-radius: 20px;
+}
+
+#new-btn {
+  width: 100%;
+  border: 4px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  font-size: 30px;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  padding: 10px;
+  margin-top: 30px;
+}
+
+#new-btn:hover {
+  border: 4px solid white;
+  background-color: rgb(41, 199, 54);
+}
+
+#btn-container {
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.label {
+  padding: 0px;
+  margin: 0px;
+  font-size: 30px;
+}
+
+.input {
+  padding: 0px;
+  margin: 0px;
+  height: 30px;
+  width: 90%;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font-size: 30px;
+  text-align: center;
+}
+
+#error-msg {
+  border: 5px solid rgb(148, 0, 0);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  margin: 0 auto;
+  width: 30%;
+  font-size: 20px;
+  background-color: rgb(216, 126, 126);
+}
+
+#error-list {
+  list-style: none;
+}

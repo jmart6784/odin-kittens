@@ -42,15 +42,9 @@ class KittensController < ApplicationController
     if @kitten.save
       flash[:success] = "Successfully created a kitten!"
       redirect_to @kitten
-      puts "**********************************"
-      puts "SUCESSFULLY CREATED"
-      puts "**********************************"
     else 
       flash.now[:danger] = "Can't create this kitten. There are some errors in your form."
       render "new"
-      puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-      puts "ERRORS FOUND"
-      puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
     end
   end
 
