@@ -1,4 +1,7 @@
-<h1>Edit Kitten</h1>
 <%= render "shared/flash" %>
+<h1 id="edit-title">Edit Kitten</h1>
 <%= render "form" %>
-<%= link_to "Cancel", @kitten %>
+
+<%= link_to @kitten, id: "cancel-edit" do  %>
+  <div id="cancel-div">Cancel</div>
+<% end %>

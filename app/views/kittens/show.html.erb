@@ -1,21 +1,33 @@
 <%= render "shared/flash" %>
 
-<h1>Kitten</h1>
-<p>
-  <strong>Name:</strong> <%= @kitten.name %>
-</p>
+<div id="detail-container">
+  <h1 id="kitten-name">Kitten: <%= @kitten.name %></h1>
+  <p class="detail">
+    <strong>Name:</strong> <%= @kitten.name %>
+  </p>
 
-<p>
-  <strong>Age:</strong> <%= @kitten.age %>
-</p>
+  <p class="detail">
+    <strong>Age:</strong> <%= @kitten.age %>
+  </p>
 
-<p>
-  <strong>Cuteness:</strong> <%= @kitten.cuteness %>
-</p>
+  <p class="detail">
+    <strong>Cuteness:</strong> <%= @kitten.cuteness %>
+  </p>
 
-<p>
-  <strong>Softness:</strong> <%= @kitten.softness %>
-</p>
+  <p class="detail">
+    <strong>Softness:</strong> <%= @kitten.softness %>
+  </p>
 
-<%= link_to 'Edit', edit_kitten_path %>
-<%= link_to 'Back', root_path %>
+  <div id="links">
+  
+    <a id="back-link" href=<%= root_path %>>
+      <img class="show-btn" src="/images/back.png" height="40" width="40"></a>
+    </a>
+
+    <a id="edit-show" href=<%= edit_kitten_path %>><img class="show-btn" src="/images/edit-white.png" height="40" width="40"></a>
+
+    <%= link_to @kitten, method: :delete, data: { confirm: 'Are you sure?' }, id: "delete-show" do %>
+      <img class="show-btn" src="/images/delete-white.png" class="options" height="40" width="40">
+    <% end %>
+  </div>
+</div>

@@ -40,14 +40,14 @@
             <td><%= kitten.softness %></td>
 
             <td><%= link_to kitten do %>
-              <img src="images/view.png" class="options" height="40" width="40">
+              <img src="/images/view.png" class="options" height="40" width="40">
             <% end %></td>
 
             <td><%= link_to edit_kitten_path(kitten) do %>
-              <img src="images/edit.png" class="options" height="40" width="40">
+              <img src="/images/edit.png" class="options" height="40" width="40">
             <% end %></td>
             <td><%= link_to kitten, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <img src="images/delete.png" class="options" height="40" width="40">
+              <img src="/images/delete.png" class="options" height="40" width="40">
             <% end %></td>
           </tr>
         <% end %>
