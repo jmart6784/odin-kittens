@@ -1,5 +1,7 @@
 <%= render "shared/flash" %>
 
+<a href="<%= "#{kitten_url}.json" %>" target="_blank" id="title-kitten-index" style="display: block; font-size: 20px; margin: 30px 0 30px 0;">JSON API Output</a>
+
 <div id="detail-container">
   <h1 id="kitten-name">Kitten: <%= @kitten.name %></h1>
   <p class="detail">
